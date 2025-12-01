@@ -4,7 +4,7 @@ const sequelize = require("./db");
 const Recipe = require("./models_eduru");
 
 const BASE_URL = "https://eda.ru/recepty";
-const PAGES = [1, 2];
+const PAGES = [1, 2,3,4,5];
 const DELAY_MS = 2000;
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -38,7 +38,7 @@ async function fetchRecipeLinks() {
   }
 
   console.log(`\nВсего собрано ссылок: ${allLinks.length}`);
-  return allLinks.slice(20, 22);
+  return allLinks;
 }
 
 

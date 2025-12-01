@@ -4,7 +4,7 @@ const sequelize = require("./db");
 const Menu1000Recipe = require("./models_1000menu");
 
 const BASE_URL = "https://1000.menu/cooking/new";
-const PAGES = [1, 2];
+const PAGES = [1,2,3,4,5];
 const DELAY_MS = 2000;
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -35,7 +35,7 @@ async function fetchRecipeLinks() {
   }
 
   console.log(`\nВсего собрано ссылок: ${allLinks.length}`);
-  return allLinks.slice(20, 22); 
+  return allLinks; 
 }
 
 
@@ -85,9 +85,6 @@ async function main() {
   try {
     await sequelize.authenticate();
     console.log("Подключение к PostgreSQL успешно!");
-
-    await sequelize.sync(); 
-    console.log("Таблица синхронизирована");
 
     const links = await fetchRecipeLinks();
 

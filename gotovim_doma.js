@@ -4,7 +4,7 @@ const sequelize = require("./db");
 const GotovimRecipe = require("./models_gotovimdoma");
 
 const BASE_URL = "https://gotovim-doma.ru/recipes";
-const PAGES = [1, 2];
+const PAGES = [1, 2,3,4,5];
 const DELAY_MS = 2000;
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -35,7 +35,7 @@ async function fetchRecipeLinks() {
   }
 
   console.log(`\nВсего собрано ссылок: ${allLinks.length}`);
-  return allLinks.slice(20, 24); 
+  return allLinks; 
 }
 
 

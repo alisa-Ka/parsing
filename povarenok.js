@@ -5,7 +5,7 @@ const sequelize = require("./db");
 const PovarenokRecipe = require("./models_povarenok");
 
 const BASE_URL = "https://www.povarenok.ru/recipes/dishes/first/?searchid=1";
-const PAGES = [1, 2, 3];
+const PAGES = [1, 2, 3,4,5];
 const DELAY_MS = 2000;
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -52,7 +52,7 @@ async function fetchRecipeLinks() {
   }
 
   console.log(`\nВсего собрано ссылок: ${allLinks.length}`);
-  return allLinks.slice(20, 22);
+  return allLinks;
 }
 
 
